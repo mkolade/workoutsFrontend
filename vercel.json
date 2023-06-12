@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "framework": "vite",
+  "routes": [
+    {
+      "src": "/(.*.(js|ico|css|png|jpe?g|gif|svg|woff2?|ttf|eot))",
+      "dest": "/dist/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "https://backend-sooty-ten.vercel.app"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/index.html"
+    }
+  ]
+}
